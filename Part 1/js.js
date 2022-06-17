@@ -143,17 +143,76 @@ if(marksBMI > johnsBMI){
 else{
     console.log(`John have the higher BMI with ${johnsBMI - marksBMI}`);
 }
+
+
+function name(date){
+    return 2022 - 22;
+}
+// let a = name(1999)
+console.log(a);
+let a,b;
+let name2 = date =>{
+    return date - 2022;
+} 
+
+let q  = name2(1999);
+console.log(q);    
+
+
+//  === vs ==
+ 
+const age = 20;
+if(age === 20){ // see type of variable
+    console.log("you are 20");
+}
+else{
+    console.log("you are not");
+}
+
+if(age == "if"){ // does not see type of variable
+    console.log("equal");
+}
+else{
+    console.log("its not");
+}
+
+// logical operators
+
+const hasLicence = true;
+const hasGoodvision = false;
+
+if(hasLicence && hasGoodvision){
+    console.log("you can drive");
+}
+else{
+    console.log("you cant drive");
+}
+
+
+if(hasLicence || hasGoodvision){
+    console.log("you can drive");
+}
+else{
+    console.log("you cant drive");
+}
 */
+// code challenge three
 
-// function name(date){
-//     return 2022 - 22;
-// }
-// // let a = name(1999)
-// console.log(a);
-// let a,b;
-// let name2 = date =>{
-//     return date - 2022;
-// } 
+ let avgdol = 40;
+ let avgcol = 50;
 
-// let q  = name2(1999);
-// console.log(q);    
+if(avgdol  >=100 || avgcol >= 100 ){
+    if(avgdol > avgcol){
+        console.log("the winner is Dolphins");
+    }
+    else if(avgcol > avgdol){
+        console.log("the winner is Koalas");
+    }
+    else{
+        console.log("the game is draw");
+    }
+}
+else{
+    console.log("the game is not count cause both team got less than 100");
+}
+
