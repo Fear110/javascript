@@ -1,3 +1,30 @@
+'use strict';
+
+
+/*
+// simple function
+function logger()
+{
+    console.log("my name is fear");
+}
+
+logger();  // calling/running/invoking
+logger();
+
+
+// Function with parameter
+function fruit(apples,oranges){
+    let a =  `there are ${apples} apples and ${oranges} oranges`;
+    return a;
+}
+let firstpro  = fruit(4,5);
+console.log(firstpro);
+
+let secondPro = fruit(4,9);
+console.log(secondPro);
+*/
+
+
 /*
 // function called from another function
 function sum(a){
@@ -33,7 +60,7 @@ let fname = () => console.log("my another name is FEAR"); // no parameter
 fname();
 
 
-let name = (name,surname) => {  
+let name = (name,surname) => {
     return `my fulll, name is ${name} ${surname}`;
 }
 let retuenname = name("sakar","pudasaini")
@@ -85,8 +112,8 @@ Test data:
 
 let calcAverage = (first, second, third) => (third + second + first) / 3;
 
-let davg = calcAverage(500, 400, 400);
-let kavg = calcAverage(500, 400, 400);
+let davg = calcAverage(44, 23, 71);
+let kavg = calcAverage(65, 54, 59);
 
 let checkWinner = function (calcAveraged, calcAveragek) {
     if (calcAveraged  >= calcAveragek *2 || calcAveragek >= calcAveraged*2) {
@@ -96,13 +123,104 @@ let checkWinner = function (calcAveraged, calcAveragek) {
         }
         else{
             console.log(`the winner is Koalas with the average is ${calcAveragek}`);
-        }       
+        }
     }
     else {
         console.log("both team lost");
     }
 }
 checkWinner(davg, kavg);
+*/
+
+
+/* 
+
+//objects
+let mine = {
+    fname : "sakar",
+    lname: "pudasaini",
+    fullname : function(){
+        console.log(`using same object my full name is ${this.fname} ${this.lname}`);
+    }
+}
+let kaju = {
+    fname : "kajal",
+    lname : "Acharya",
+    fullname : function(fname,lname){
+        console.log(`her full name is ${this.fname} ${this.lname}`);
+    }
+}
+
+let other = {
+    othername : function(){
+        console.log(`name is ${this.fname} ${this.lname}`);
+    }
+}
+
+let othername = other.othername.call(kaju);
+
+
+let mark = {  // object number one
+    fname: "Mark Miller",
+    mass: 78,
+    height: 1.69,
+};
+let john = {  // object bnumber two
+    fname: "John Smith",
+    mass: 92,
+    height: 1.95,
+};
+
+let calcBMI = { // third object with method
+    calcBMI : function(){  // function within onject is known as method
+        return this.mass + this.height;
+    }
+}
+let q = calcBMI.calcBMI.call(mark);  // call method is used here
+console.log(q);
+
+
+
+let name = {  // bracket can be used as . in object with great advantages 
+    fname : "sakar",
+    lname : "pudasaini"
+};
+
+let a = "name";
+console.log(`my name is ${name["f"+a]}`);
+
+
+function calc (num1, num2){
+    let no1 = mul(num1);
+    let no2 = sum(num2);
+    console.log(`mul is ${no1} and add is ${no2}`);
+}
+function mul(number1){
+    return number1 *2;
+}
+
+function sum(number2){
+    return number2 + 2;
+}
+calc(4,4);
+
+
+// some actions in array
+
+let friends = ['dawa', 'nitin'];
+console.log(friends);
+
+friends.push('saugat');  // add new element to the array at last position
+console.log(friends);   // returns the number of the array
+
+friends.unshift('kosish') // returns the number of the array
+console.log(friends); // add new element at first position in the array
+
+friends.pop(); // removes last element of the array
+console.log(friends); //returns removed element from the array
+
+friends.shift();  //remove first element of the array
+console.log();  //returns removed element from the array
 */
 
 
@@ -147,60 +265,81 @@ console.log(bills,tips);
 
 let total = [bills[0]+tips[0],bills[1]+tips[1],bills[2]+tips[2]]
 console.log(total);
-*/
 
-/* some practise
-let mine = {
-    fname : "sakar",
-    lname: "pudasaini",
-    fullname : function(){
-        console.log(`using same object my full name is ${this.fname} ${this.lname}`);
+
+const my = {
+    name : 'sakar',
+    lname : 'pudasaini',
+    friend : ["dawa","nitin"]
+}
+console.log(my.name);
+
+let length = my.friend.length;
+console.log(length);
+console.log(`my friends are ${my.friend[0]} and ${my.friend[1]} and total friends are ${length}`);
+
+
+
+let sakar = {
+    fname : "sakar pudasaini",
+    age :22 ,
+    job : "student",
+    drivinglicence : true,
+
+    out : function(){
+        console.log(`${this.fname} is ${this.age} old man and his job is ${this.job} and he has driving licence ${this.drivinglicence? "yes" : "no"}`);
     }
 }
-let kaju = {
-    fname : "kajal",
-    lname : "Acharya",
-    fullname : function(fname,lname){
-        console.log(`her full name is ${this.fname} ${this.lname}`);
-    }
-}
-
-let other = {
-    othername : function(){
-        console.log(`name is ${this.fname} ${this.lname}`);
-    }
-}
-
-let othername = other.othername.call(kaju);
-
+sakar.out();
 */
 
 /*
-let mark = {  // object number one
-    fname: "Mark Miller",
-    mass: 78,
-    height: 1.69,
-};
-let john = {  // object bnumber two
-    fname: "John Smith",
-    mass: 92,
-    height: 1.95,
-};
+Coding Challenge #3
+Let's go back to Mark and John comparing their BMIs! This time, let's use objects to
+implement the calculations! Remember: BMI = mass / height ** 2 = mass
+/ (height * height) (mass in kg and height in meter)
+Your tasks:
+1. For each of them, create an object with properties for their full name, mass, and
+height (Mark Miller and John Smith)
+2. Create a 'calcBMI' method on each object to calculate the BMI (the same
+method on both objects). Store the BMI value to a property, and also return it
+from the method
+3. Log to the console who has the higher BMI, together with the full name and the
+respective BMI. Example: "John's BMI (28.3) is higher than Mark's (23.9)!"
+Test data: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m
+tall.
 
-let calcBMI = { // third object with method
-    bmi : function(){  // function within onject is known as method
-        return this.mass + this.height;
+
+
+let mark = {
+    fullname : 'John',
+    mass : 78 ,
+    hight : 1.69,
+
+    calcBMI : function(){
+    return this.a = this.mass / this.hight **2;       
     }
 }
-let q = calcBMI.bmi.call(mark);  // call method is used here
-console.log(q);
+
+
+let john = {
+    fullname : 'John',
+    mass : 92 ,
+    hight : 1.95,
+    calcBMI : function(){
+        return this.b = this.mass / this.hight **2;       
+        }
+}
+
+let markBMI = mark.calcBMI();
+let johnBMI = john.calcBMI();
+
+if(markBMI > johnBMI){
+    console.log(`mark's BMI is (${markBMI}) higher that john's BMI (${johnBMI})`);
+}
+else if(johnBMI > markBMI){
+    console.log(`JOhn's BMI is (${JohnBMI}) higher that Mark's BMI (${MarkBMI})`);
+}
+
 */
 
-
-let name = {  // bracket can be used as . in object with great advantages 
-    fname : "sakar",
-    lname : "pudasaini"
-};
-
-let a = "name";
-console.log(`my name is ${name["f"+a]}`);
