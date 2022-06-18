@@ -149,22 +149,58 @@ let total = [bills[0]+tips[0],bills[1]+tips[1],bills[2]+tips[2]]
 console.log(total);
 */
 
-// let mark = {
-//     fname : "Mark Miller",
-//     mass : 78,
-//     height : 1.69,
-//     bmi : function(){
-//        this.bmi = this.mass / this.height ** 2;
-//         return this.bmi;
+/* some practise
+let mine = {
+    fname : "sakar",
+    lname: "pudasaini",
+    fullname : function(){
+        console.log(`using same object my full name is ${this.fname} ${this.lname}`);
+    }
+}
+let kaju = {
+    fname : "kajal",
+    lname : "Acharya",
+    fullname : function(fname,lname){
+        console.log(`her full name is ${this.fname} ${this.lname}`);
+    }
+}
 
-//     }
+let other = {
+    othername : function(){
+        console.log(`name is ${this.fname} ${this.lname}`);
+    }
+}
 
-// };
-// let john = {
-//     fname : "John Smith",
-//     mass : 92,
-//     height : 1.95
-// };
-// mark.bmi();
-// console.log(mark.bmi)
+let othername = other.othername.call(kaju);
 
+*/
+
+/*
+let mark = {  // object number one
+    fname: "Mark Miller",
+    mass: 78,
+    height: 1.69,
+};
+let john = {  // object bnumber two
+    fname: "John Smith",
+    mass: 92,
+    height: 1.95,
+};
+
+let calcBMI = { // third object with method
+    bmi : function(){  // function within onject is known as method
+        return this.mass + this.height;
+    }
+}
+let q = calcBMI.bmi.call(mark);  // call method is used here
+console.log(q);
+*/
+
+
+let name = {  // bracket can be used as . in object with great advantages 
+    fname : "sakar",
+    lname : "pudasaini"
+};
+
+let a = "name";
+console.log(`my name is ${name["f"+a]}`);
