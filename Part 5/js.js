@@ -20,7 +20,7 @@ let temperatures2 = [12, 5, -5, 0, 4];
 let printForecast = function (arr) {
   let str = '';
   for (let i = 0; i < arr.length; i++) {
-    str = str + ` ...${arr[i]}°c in days ${i + 1}`;
+    str = str + `...${arr[i]}°c in days ${i + 1}`;
   }
   console.log(str);
 };
