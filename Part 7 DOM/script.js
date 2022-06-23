@@ -30,7 +30,8 @@ document.querySelector('.check').addEventListener('click', function () {
 
         document.querySelector('.number').textContent = guess;
         document.querySelector('.score').textContent = scorenum;
-        document.querySelector('body').style.backgroundColor = 'blue';
+        document.querySelector('body').style.backgroundColor = '#1affeb';
+        displayMessage('You Guessed the correct Number😍😍');
         if ((scorenum) => higestsco) {
           document.querySelector('.highscore').textContent = scorenum;
           higestsco = scorenum;
