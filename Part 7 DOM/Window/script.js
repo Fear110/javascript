@@ -10,6 +10,14 @@ btnOpenModal.addEventListener('click', function () {
   overlay.classList.remove('hidden');
 });
 
+const closemodal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
+btnCloseModal.addEventListener('click', closemodal);
+overlay.addEventListener('click', closemodal);
+
 /*
 btnCloseModal.addEventListener('click', function () {
   modal.classList.add('hidden');
@@ -22,10 +30,11 @@ overlay.addEventListener('click', function () {
 });
 */
 
-const closemodal = function () {
-  modal.classList.add('hidden');
-  overlay.classList.add('hidden');
-};
-
-btnCloseModal.addEventListener('click', closemodal);
-overlay.addEventListener('click', closemodal);
+document.addEventListener('keydown', function (e) {
+  console.log(e);
+  if (e.key === 'Escape') {
+    if (!modal.classList.contains('hidden')) {
+      closemodal();
+    }
+  }
+});
