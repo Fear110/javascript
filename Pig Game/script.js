@@ -53,7 +53,28 @@ firstRoll();
 const scoreFirstElement = document.querySelector('#score--0');
 const scoreSecondElement = document.getElementById('score--1');
 const dicePicElement = document.querySelector('.dice');
+const ButtonNew = document.querySelector('.btn--new');
+const ButtonRoll = document.querySelector('.btn--roll');
+const ButtonHold = document.querySelector('.btn--hold');
+const currentFirstScore = document.querySelector('#current--0');
+const currentSecondScore = document.querySelector('#current--1')
 
 scoreFirstElement.textContent = 0;
 scoreSecondElement.textContent = 0;
 dicePicElement.classList.add('hidden');
+
+let totalScore = 0;
+let currentScore = 0;
+
+ButtonRoll.addEventListener('click', function () {
+  const randomNumber = Math.trunc(Math.random() * 6 + 1);
+  dicePicElement.classList.remove('hidden');
+  dicePicElement.src = `pic/dice-${randomNumber}.png`;
+
+  if (randomNumber !== 1) {
+    currentScore = currentScore + randomNumber;
+    currentFirstScore.textContent = currentScore;
+  } else {
+    //if random number is 1
+  }
+});
