@@ -61,12 +61,15 @@ const currentFirstScore = document.querySelector('#current--0');
 const currentSecondScore = document.querySelector('#current--1');
 const player0 = document.querySelector('.player--0');
 const player1 = document.querySelector('.player--1');
+
 scoreFirstElement.textContent = 0;
 scoreSecondElement.textContent = 0;
 dicePicElement.classList.add('hidden');
-let currentScore = 0;
+
 let activePLayer = 0;
+let currentScore = 0;
 const scores = [0, 0];
+
 ButtonRoll.addEventListener('click', function () {
   const randomNumber = Math.trunc(Math.random() * 6 + 1);
   dicePicElement.classList.remove('hidden');
@@ -83,6 +86,7 @@ ButtonRoll.addEventListener('click', function () {
     player1El.classList.toggle('player--active');
   }
 });
+
 ButtonHold.addEventListener('click', function () {
   scores[activePLayer] += currentScore;
   document.getElementById(`score--${activePLayer}`).textContent =
