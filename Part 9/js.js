@@ -26,11 +26,92 @@ const restaurant = {
   },
 
   orderDelievery: function ({ time, address, mainIndex, starterIndex }) {
+    // console.log(
+    //   `order is received of ${this.mainMenu[mainIndex]}, and ${this.starterMenu[starterIndex]} delievert at ${time} in ${address}} `
+    // );
+  },
+
+  momo: function (piece, meat, color) {
     console.log(
-      `order is received of ${this.mainMenu[mainIndex]}, and ${this.starterMenu[starterIndex]} delievert at ${time} in ${address}} `
+      `your momo is with ${piece} pieces, ${meat} meat and ${color} in color`
     );
   },
+  chowmin: function (nudles, ...othersIg) {
+    console.log(`your chowmin is with ${nudles} and ${othersIg}`);
+  },
 };
+
+/*
+
+restaurant.chowmin('mama', 'salad', 'buff', 'onion');
+
+// SPREAD
+const arr = [1, 2, 3, ...[4, 5, 6]];
+
+//REST
+const [a, b, ...others] = arr;
+console.log(a, b, others);
+
+const [pizza, Pasta, Risotto, ...othersFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, Pasta, Risotto, othersFood);
+
+// REST in Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(sat);
+console.log(weekdays);
+
+const calc = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+};
+
+let nul = [1, 2, 4, 5];
+calc(...nul);
+calc(56, 57, 58969);
+
+*/
+
+/*
+
+/// the spread Operator
+
+const arr = [6, 7, 8];
+const newarr = [1, 2, 3, 4, ...arr];
+console.log(newarr);
+
+console.log(...arr);
+
+// copy an array
+const newMainMenu = [...restaurant.mainMenu];
+console.log(newMainMenu);
+
+const newMenu = [...restaurant.mainMenu, 'momo'];
+console.log(newMenu);
+
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menu);
+
+// const momoMaker = [
+//   prompt('how many pieces ?'),
+//   prompt('which meat ?'),
+//   prompt('what is the color ?'),
+// ];
+
+//restaurant.momo(...momoMaker);
+
+const newRes = {founder : "Sakar",...restaurant}; // only makes copy does not change the original value
+console.log(newRes); // Changed value added value
+
+console.log(restaurant); // original value
+*/
+
+/*
 
 restaurant.orderDelievery({
   time: '11:00',
@@ -38,8 +119,6 @@ restaurant.orderDelievery({
   mainIndex: 2,
   starterIndex: 1,
 });
-
-/*
 
 // destructing Objects
 const { name, openingHours, categories } = restaurant;
