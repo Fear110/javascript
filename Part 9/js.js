@@ -278,6 +278,55 @@ const game = {
   },
 };
 
-console.log(game.players);
+// Question Number one
 let player1 = game.players[0];
 let player2 = game.players[1];
+console.log(player1);
+console.log(player2);
+
+// Question Number two
+const [gk, ...filedPlayers] = player1;
+console.log(gk);
+console.log(filedPlayers);
+
+// Question number Three
+const allPlayers = [...player1, ...player2];
+console.log(allPlayers);
+
+// Question number Four
+const player1Final = ['Thiago', 'Coutinho', 'Perisic', ...player1];
+console.log(player1Final);
+
+// Question number Five
+const team1 = game.odds.team1;
+const draw = game.odds.x;
+const team2 = game.odds.team2;
+
+console.log(team1);
+console.log(draw);
+console.log(team2);
+
+// Question Number Six
+const playerScored = game.scored;
+const printGoals = function (playername) {
+  let goal = 0;
+  for (let i = 0; i < playerScored.length; i++) {
+    if (playername === playerScored[i]) {
+      goal = goal + 1;
+    }
+  }
+  console.log(`${playername} Scored ${goal} Goals`);
+};
+//const pring = prompt("Enter the name of Player")
+printGoals('Davies');
+printGoals('Muller');
+printGoals('Kimmich');
+printGoals('Lewandowski');
+
+// Question Number Seven
+if (team1 > team2) {
+  console.log('Team Two Most Likely to win');
+}
+if (team1 < team2) {
+  console.log('Team One Most Likely to Win');
+}
