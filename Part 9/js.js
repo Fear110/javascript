@@ -324,9 +324,22 @@ printGoals('Kimmich');
 printGoals('Lewandowski');
 
 // Question Number Seven
-if (team1 > team2) {
-  console.log('Team Two Most Likely to win');
-}
-if (team1 < team2) {
-  console.log('Team One Most Likely to Win');
-}
+// if (team1 > team2) {
+//   console.log('Team Two Most Likely to win');
+// }
+// if (team1 < team2) {
+//   console.log('Team One Most Likely to Win');
+// }
+
+
+// team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+
+// const finalWinner = team1 > team2 || team1 < team2;
+// console.log(finalWinner);
+
+// const finalResult  = team1 > team2 ?? team2 > team1;
+
+team1 > team2 && console.log("Team two is most likely to win");
+team2 > team1 && console.log("Team one is most likely to win");
