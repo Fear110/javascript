@@ -237,6 +237,8 @@ team is more likely to win, without using an if/else statement or the ternary
 operator
 */
 
+/*
+
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -306,22 +308,33 @@ console.log(team1);
 console.log(draw);
 console.log(team2);
 
-// Question Number Six
-const playerScored = game.scored;
-const printGoals = function (playername) {
-  let goal = 0;
-  for (let i = 0; i < playerScored.length; i++) {
-    if (playername === playerScored[i]) {
-      goal = goal + 1;
-    }
-  }
-  console.log(`${playername} Scored ${goal} Goals`);
+// // Question Number Six
+// const playerScored = game.scored;
+// const printGoals = function (playername) {
+//   let goal = 0;
+//   for (let i = 0; i < playerScored.length; i++) {
+//     if (playername === playerScored[i]) {
+//       goal = goal + 1;
+//     }
+//   }
+//   console.log(`${playername} Scored ${goal} Goals`);
+// };
+// //const pring = prompt("Enter the name of Player")
+// printGoals('Davies');
+// printGoals('Muller');
+// printGoals('Kimmich');
+// printGoals('Lewandowski');
+
+
+
+const printGoals = function (...players) {
+  console.log(players);
+  console.log(`${players.length} goals were scored`);
 };
-//const pring = prompt("Enter the name of Player")
-printGoals('Davies');
-printGoals('Muller');
-printGoals('Kimmich');
-printGoals('Lewandowski');
+
+printGoals('');
+printGoals(...game.scored);
+
 
 // Question Number Seven
 // if (team1 > team2) {
@@ -336,10 +349,14 @@ printGoals('Lewandowski');
 //     x: 3.25,
 //     team2: 6.5,
 
-// const finalWinner = team1 > team2 || team1 < team2;
+// const finalWinner = ateam1 > team2 || team1 < team2;
 // console.log(finalWinner);
 
 // const finalResult  = team1 > team2 ?? team2 > team1;
 
 team1 > team2 && console.log("Team two is most likely to win");
 team2 > team1 && console.log("Team one is most likely to win");
+
+*/
+
+// Looping array _ the for of loop
