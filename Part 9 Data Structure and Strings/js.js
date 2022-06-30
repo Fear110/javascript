@@ -1,37 +1,35 @@
 'use strict';
-
+const weekdays = ['mon', 'tue', 'wen', 'thu', 'fri', 'sat', 'sun'];
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0,
+    close: 24,
+  },
+};
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-  openingHours: {
-    thus: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0,
-      close: 24,
-    },
-  },
-
+  openingHours, //  Enhance Object Literals
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
-
-  orderDelievery: function ({ time, address, mainIndex, starterIndex }) {
+  orderDelievery({ time, address, mainIndex, starterIndex }) {
     // console.log(
     //   `order is received of ${this.mainMenu[mainIndex]}, and ${this.starterMenu[starterIndex]} delievert at ${time} in ${address}} `
     // );
   },
-
-  momo: function (piece, meat, color) {
+  momo(piece, meat, color) {
     console.log(
       `your momo is with ${piece} pieces, ${meat} meat and ${color} in color`
     );
@@ -41,6 +39,38 @@ const restaurant = {
   },
 };
 
+const days = ['mon', 'tue', 'wen', 'thu', 'fri', 'sat', 'sun'];
+for (const day of days) {
+  const open = restaurant.openingHours[days]?.open ?? 'close';
+  console.log(`we are open on ${day} at ${open}`);
+}
+
+// methods
+console.log(restaurant.order?.(0, 1) ?? 'method does not exist');
+console.log(restaurant.orderChiya?.(3, 4) ?? 'method does not exists');
+
+//array
+// const users = [{ name: 'sakar', email: 'barcaboysakar@gmail.com', age: 22 }];
+const users =[];
+console.log(users[0]?.name ?? 'array is empty');
+
+if(users.length > 0) console.log(users[0].name);
+else console.log("user array is Empty");
+
+
+
+/*
+// Looping array _ the for of loop
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// for(const items of menu){
+//   console.log(items);
+// }
+for (const [i, items] of menu.entries()) {
+  console.log(`menu is ${i + 1} at ${items}`);
+}
+
+
+*/
 /*
 
 restaurant.chowmin('mama', 'salad', 'buff', 'onion');
@@ -358,5 +388,3 @@ team1 > team2 && console.log("Team two is most likely to win");
 team2 > team1 && console.log("Team one is most likely to win");
 
 */
-
-// Looping array _ the for of loop
