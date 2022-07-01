@@ -39,7 +39,6 @@ const restaurant = {
   },
 };
 
-
 /*
 const days = ['mon', 'tue', 'wen', 'thu', 'fri', 'sat', 'sun'];
 for (const day of days) {
@@ -267,9 +266,7 @@ number of goals that were scored in total (number of player names passed in)
 team is more likely to win, without using an if/else statement or the ternary
 operator
 */
-
 /*
-
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -331,32 +328,34 @@ const player1Final = ['Thiago', 'Coutinho', 'Perisic', ...player1];
 console.log(player1Final);
 
 // Question number Five
-const team1 = game.odds.team1;
-const draw = game.odds.x;
-const team2 = game.odds.team2;
+// const team1 = game.odds.team1;
+// const draw = game.odds.x;
+// const team2 = game.odds.team2;
 
+// console.log(team1);
+// console.log(draw);
+// console.log(team2);
+const {team1 , x:draw,  team2 } = game.odds;
 console.log(team1);
 console.log(draw);
 console.log(team2);
 
-// // Question Number Six
-// const playerScored = game.scored;
-// const printGoals = function (playername) {
-//   let goal = 0;
-//   for (let i = 0; i < playerScored.length; i++) {
-//     if (playername === playerScored[i]) {
-//       goal = goal + 1;
-//     }
-//   }
-//   console.log(`${playername} Scored ${goal} Goals`);
-// };
-// //const pring = prompt("Enter the name of Player")
+// Question Number Six
+const playerScored = game.scored;
+const printGoals2 = function (playername) {
+  let goal = 0;
+  for (let i = 0; i < playerScored.length; i++) {
+    if (playername === playerScored[i]) {
+      goal = goal + 1;
+    }
+  }
+  console.log(`${playername} Scored ${goal} Goals`);
+};
+//const pring = prompt("Enter the name of Player")
 // printGoals('Davies');
 // printGoals('Muller');
 // printGoals('Kimmich');
 // printGoals('Lewandowski');
-
-
 
 const printGoals = function (...players) {
   console.log(players);
@@ -366,30 +365,19 @@ const printGoals = function (...players) {
 printGoals('');
 printGoals(...game.scored);
 
+//Question Number Seven
+if (team1 > team2) {
+  console.log('Team Two Most Likely to win');
+}
+if (team1 < team2) {
+  console.log('Team One Most Likely to Win');
+}
 
-// Question Number Seven
-// if (team1 > team2) {
-//   console.log('Team Two Most Likely to win');
-// }
-// if (team1 < team2) {
-//   console.log('Team One Most Likely to Win');
-// }
+team1 > team2 && console.log('Team two is most likely to win');
+team2 > team1 && console.log('Team one is most likely to win');
 
-
-// team1: 1.33,
-//     x: 3.25,
-//     team2: 6.5,
-
-// const finalWinner = ateam1 > team2 || team1 < team2;
-// console.log(finalWinner);
-
-// const finalResult  = team1 > team2 ?? team2 > team1;
-
-team1 > team2 && console.log("Team two is most likely to win");
-team2 > team1 && console.log("Team one is most likely to win");
 
 */
-
 /*
 let profile = {
   name: 'fear',
@@ -407,3 +395,96 @@ console.log(a)
 console.log(b)
 */
 
+/*
+Coding Challenge #2
+Let's continue with our football betting app! Keep using the 'game' variable from
+before.
+Your tasks:
+1. Loop over the game.scored array and print each player name to the console,
+along with the goal number (Example: "Goal 1: Lewandowski")
+2. Use a loop to calculate the average odd and log it to the console (We already
+studied how to calculate averages, you can go check if you don't remember)
+3. Print the 3 odds to the console, but in a nice formatted way, exactly like this:
+Odd of victory Bayern Munich: 1.33
+Odd of draw: 3.25
+Odd of victory Borrussia Dortmund: 6.5
+Get the team names directly from the game object, don't hardcode them
+(except for "draw"). Hint: Note how the odds and the game objects have the
+same property names �
+4. Bonus: Create an object called 'scorers' which contains the names of the
+players who scored as properties, and the number of goals as the value. In this
+game, it will look like this:
+{
+ Gnarby: 1,
+ Hummels: 1,
+ Lewandowski: 2
+}
+*/
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+// Question Number One
+console.log('Question Number 1: ');
+const playerScores = game.scored;
+for (let [player, goal] of playerScores.entries()) {
+  console.log(`Goal ${player + 1}: ${goal}`);
+}
+
+// Question Number two
+console.log('Question Number 2: ');
+const gameOdd = Object.values(game.odds);
+let totalSum = 0;
+for (let odd of gameOdd) {
+  totalSum = totalSum + odd;
+}
+const average = totalSum / gameOdd.length;
+console.log(average);
+
+// Question Number Three
+console.log('Question Number 3: ');
+for (const [team, odd] of Object.entries(game.odds)) {
+  if (game[team] === undefined) {
+    console.log(`Draw odd is ${odd}`);
+  } else {
+    console.log(`Odd of ${game[team]} ${odd}`);
+  }
+}
