@@ -39,6 +39,8 @@ const restaurant = {
   },
 };
 
+
+/*
 const days = ['mon', 'tue', 'wen', 'thu', 'fri', 'sat', 'sun'];
 for (const day of days) {
   const open = restaurant.openingHours[days]?.open ?? 'close';
@@ -59,7 +61,6 @@ else console.log("user array is Empty");
 
 
 
-/*
 // Looping array _ the for of loop
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 // for(const items of menu){
@@ -388,3 +389,21 @@ team1 > team2 && console.log("Team two is most likely to win");
 team2 > team1 && console.log("Team one is most likely to win");
 
 */
+
+/*
+let profile = {
+  name: 'fear',
+  address: 'balaju',
+  college: {
+    firstCollege:0,
+    secondCollege: 'nccs',
+  },
+};
+
+let a = profile.college.firstCollege ?? console.log("methos not found"); // returns 0 not false
+let b = profile.college.firstCollege || console.log("methos not found"); // returns false if the value is 0
+
+console.log(a)
+console.log(b)
+*/
+
