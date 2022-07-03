@@ -40,6 +40,63 @@ const restaurant = {
 };
 
 /*
+// map
+const ras = ['jibjibe', 'kalika', 'gosaikunda'];
+
+const rest = new Map();
+rest.set('name', 'sardar Momo');
+rest.set(1, 'kakashi');
+rest.set(2, ['jibjibe', 'kalika', 'gosaikunda']);
+console.log(rest);
+
+rest.set('momo', 120).set('chowmin', 150).set('coke', 50);
+console.log(rest); // to push into Map .set
+
+console.log(rest.get('momo')); // to get return from Map .get
+// rest.delete('momo'); // delete from map
+console.log(rest);
+console.log(rest.size); // returns size of the Map
+// rest.clear()  // delete whole Map
+console.log(rest.has('Fear')); //return true or false
+
+rest.set('heading', document.querySelector('h1'));
+console.log(rest.get('heading'));
+
+const question = new Map([
+  ['question', 'what is the most popular programing language:'],
+  [1, 'java'],
+  [2, 'Python'],
+  [3, 'JavaScript'],
+  ['Correct', 3],
+  [true, 'Your answer is Correct 😍'],
+  [false, 'your answer is Incorrect ⛔'],
+]);
+for (const [key, value] of question) {
+  if (typeof key === 'number') {
+    console.log(`Answer ${key}: ${value}`);
+  }
+}
+
+//const ans = Number(prompt('What is your answer?'));
+const ans = 3;
+console.log(ans);
+if (ans === question.get('correct')) {
+  console.log(question.get(true));
+} else {
+  console.log(question.get(false));
+}
+
+//Converting Map to array
+const questionArray = [...question];
+console.log(questionArray);
+
+console.log(...question.keys());
+console.log(...question.values());
+
+
+*/
+
+/*
 const days = ['mon', 'tue', 'wen', 'thu', 'fri', 'sat', 'sun'];
 for (const day of days) {
   const open = restaurant.openingHours[days]?.open ?? 'close';
@@ -420,7 +477,7 @@ game, it will look like this:
  Lewandowski: 2
 }
 */
-
+/*
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -470,6 +527,7 @@ for (let [player, goal] of playerScores.entries()) {
 }
 
 // Question Number two
+console.log('.........................................');
 console.log('Question Number 2: ');
 const gameOdd = Object.values(game.odds);
 let totalSum = 0;
@@ -477,9 +535,10 @@ for (let odd of gameOdd) {
   totalSum = totalSum + odd;
 }
 const average = totalSum / gameOdd.length;
-console.log(average);
+console.log('Average Odd is ' + average);
 
 // Question Number Three
+console.log('.........................................');
 console.log('Question Number 3: ');
 for (const [team, odd] of Object.entries(game.odds)) {
   if (game[team] === undefined) {
@@ -488,3 +547,126 @@ for (const [team, odd] of Object.entries(game.odds)) {
     console.log(`Odd of ${game[team]} ${odd}`);
   }
 }
+
+console.log('.........................................');
+console.log('.........................................');
+
+// Bonus Challenge
+console.log('.........................................');
+const scorers = {};
+for (const player of game.scored) {
+  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+}
+*/
+
+/*
+Coding Challenge #3
+Let's continue with our football betting app! This time, we have a map called
+'gameEvents' (see below) with a log of the events that happened during the
+game. The values are the events themselves, and the keys are the minutes in which
+each event happened (a football game has 90 minutes plus some extra time).
+Your tasks:
+1. Create an array 'events' of the different game events that happened (no
+duplicates)
+2. After the game has finished, is was found that the yellow card from minute 64
+was unfair. So remove this event from the game events log.
+3. Compute and log the following string to the console: "An event happened, on
+average, every 9 minutes" (keep in mind that a game has 90 minutes)
+4. Loop over 'gameEvents' and log each element to the console, marking
+whether it's in the first half or second half (after 45 min) of the game, like this:
+[FIRST HALF] 17: ⚽ GOAL
+*/
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+const gameEvents = new Map([
+  [17, '⚽ GOAL'],
+  [36, '� Substitution'],
+  [47, '⚽ GOAL'],
+  [61, '� Substitution'],
+  [64, '� Yellow card'],
+  [69, '� Red card'],
+  [70, '� Substitution'],
+  [72, '� Substitution'],
+  [76, '⚽ GOAL'],
+  [80, '⚽ GOAL'],
+  [92, '� Yellow card'],
+]);
+
+// Question Number One
+console.log('Question number One: ');
+const gameEventSet = new Set(gameEvents.values());
+console.log(gameEventSet);
+
+// Question Number Two
+console.log('Question Number Two: ');
+console.log('......................................................');
+gameEvents.delete(64);
+console.log(gameEvents);
+
+// Question Number three
+console.log('Question Number Three: ');
+console.log('......................................................');
+let totalEvent = gameEvents.size + 1;
+const totalGametime = 90;
+for (let [key, events] of gameEvents) {
+  if (key > totalGametime) {
+    totalEvent = totalEvent - 1;
+  }
+}
+const averageAction = totalGametime / totalEvent;
+console.log(`An event happened, on average , every ${averageAction} minutes`);
+
+
+// Question Number Four
+console.log('Question Number Four: ');
+console.log('......................................................');
+for (const [i, j] of gameEvents) {
+  if (i < 45) {
+    console.log(`[First half] ${i}: ${j}`);
+  } else if (i > 90) {
+    console.log(`[Extra Time] ${i}: ${j}`);
+  } else {
+    console.log(`[Second Half] ${i}: ${j}`);
+  }
+}
+
