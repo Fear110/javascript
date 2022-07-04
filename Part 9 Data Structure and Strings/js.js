@@ -577,6 +577,7 @@ whether it's in the first half or second half (after 45 min) of the game, like t
 [FIRST HALF] 17: ⚽ GOAL
 */
 
+/*
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -669,4 +670,43 @@ for (const [i, j] of gameEvents) {
     console.log(`[Second Half] ${i}: ${j}`);
   }
 }
+*/
 
+// Working with String
+
+const airplane = 'Hamro Nepal Airlince';
+const plane = 'A380';
+
+console.log(airplane[0]);
+console.log(airplane[1]);
+console.log(airplane[3]);
+console.log(airplane[4]);
+console.log(airplane[5]);
+console.log(airplane[6]);
+
+console.log('sakar'[4]);
+console.log(airplane.length); //returns the length of the string
+console.log(airplane.indexOf('e'));
+console.log(airplane.indexOf('Airlince'));
+
+console.log(airplane.slice(0, 5));
+console.log(airplane.slice(0, airplane.lastIndexOf(' ')));
+
+console.log(airplane.slice(-8));
+console.log(airplane.lastIndexOf(' '));
+
+const checkMiddleSeat = function(seat){
+  const preSeat = seat;
+  const ans = preSeat.slice(-1);
+  console.log(ans);
+  if(ans == 'B' || ans == 'E' ){
+    console.log("Congrulations your have the middle Seat");
+  }
+  else{
+    console.log("Maybe next time");
+  }
+
+}
+checkMiddleSeat('11B');
+checkMiddleSeat('11E');
+checkMiddleSeat('11F');
