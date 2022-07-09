@@ -877,3 +877,79 @@ for (const flight of flights.split('+')) {
   console.log(output);
 }
 */
+/*
+// some string methods
+
+let text = 'welcome FEAR';
+let letter = text.charAt(0);
+console.log(letter);
+
+let code = text.charCodeAt(0);
+console.log(code);
+
+code = text.codePointAt(2);
+console.log(code);
+
+let text1 = 'sea';
+let text2 = 'food';
+let result = text1.concat(text2);
+console.log(result);
+
+text = 'Hello world';
+result = text.endsWith('world');
+console.log(result);
+
+result = text.includes('world');
+console.log(result);
+
+text = 'Hello world, welcome to the universe.';
+result = text.indexOf('welcome');
+console.log(result);
+
+text = 'Hello planet earth, you are a great planet.';
+result = text.lastIndexOf('planet');
+console.log(result);
+
+text = 'Hello World!';
+let length = text.length;
+console.log(length);
+
+text1 = 'ab';
+text2 = 'cd';
+result = text1.localeCompare(text2);
+console.log(result);
+
+text = 'The rain in SPAIN stays mainly in the plain';
+result = text.match('rain');
+console.log(result);
+
+text = 'Hello world!';
+result = text.repeat(2);
+console.log(result);
+
+text = 'Do not fear';
+result = text.replace('Do', 'I').replace('not', 'am');
+console.log(result);
+
+let position = text.search('fear');
+console.log(position);
+
+result = text.slice(0, 5);
+console.log(result);
+
+const myArray = text.split(' ');
+console.log(myArray);
+
+text = "Hello world, This is me Fear";
+console.log(text.startsWith("Fear"));
+
+
+text = "Hello world!";
+result = text.substr(1, 4);
+console.log(result);
+
+ text = "       Hello World!        ";
+ result = text.trim();
+ console.log(result);
+*/
+
