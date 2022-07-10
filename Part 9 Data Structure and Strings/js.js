@@ -953,3 +953,33 @@ console.log(result);
  console.log(result);
 */
 
+//map practice again
+// map eliminate the repeatig value from the array and give output with index
+// const name = ['sakar', 'fear', 'kakashi', 'sakar', 'fear'];
+// const nameset = new Set(name);
+// console.log(nameset);
+
+// nameset.delete('fear');
+// console.log(nameset);
+
+
+// if(nameset.has("kakashi")){  //returns boolen value i.e. ture ot false
+//   console.log("yes this set does have Kakashi");
+// }
+// else{
+//   console.log("it does not have Kakashi");
+// }
+
+
+// const name = ['sakar', 'fear', 'kakashi', 'sakar', 'fear'];
+
+// for(const[i,j] of name.entries()){
+//   console.log(typeof(j));
+//   console.log(typeof(j));
+//   console.log(i,j);
+// }
+// const nameset = [...new Set(name)];
+
+// for(const[index,obj] of nameset.entries()){
+//   console.log(`my number ${index+1} name is ${obj}`);
+// }
