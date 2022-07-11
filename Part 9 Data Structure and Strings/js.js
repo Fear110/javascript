@@ -1,4 +1,5 @@
 'use strict';
+/*
 const weekdays = ['mon', 'tue', 'wen', 'thu', 'fri', 'sat', 'sun'];
 const openingHours = {
   [weekdays[3]]: {
@@ -38,7 +39,7 @@ const restaurant = {
     console.log(`your chowmin is with ${nudles} and ${othersIg}`);
   },
 };
-
+*/
 /*
 // map
 const ras = ['jibjibe', 'kalika', 'gosaikunda'];
@@ -952,7 +953,7 @@ console.log(result);
  result = text.trim();
  console.log(result);
 */
-
+/*
 //map practice again
 // map eliminate the repeatig value from the array and give output with index
 // const name = ['sakar', 'fear', 'kakashi', 'sakar', 'fear'];
@@ -971,15 +972,71 @@ console.log(result);
 // }
 
 
-// const name = ['sakar', 'fear', 'kakashi', 'sakar', 'fear'];
+const fname = () => console.log("hey");
+fname();
+
+const name = ['sakar', 'fear', 'kakashi', 'sakar', 'fear'];
 
 // for(const[i,j] of name.entries()){
 //   console.log(typeof(j));
 //   console.log(typeof(j));
 //   console.log(i,j);
 // }
-// const nameset = [...new Set(name)];
+
+const nameset =new Set(name);
+nameset.add("sumit");
+nameset.add(fname)
+console.log(nameset);
 
 // for(const[index,obj] of nameset.entries()){
 //   console.log(`my number ${index+1} name is ${obj}`);
 // }
+*/
+
+/*
+// some help to my friends
+const voidCheck = function (num) {
+  if (num >= 1) {
+    console.log('Number is Greather than Zero');
+  } else if (num === 0) {
+    console.log('Number is Zero');
+  } else if (num === undefined) {
+    console.log('Given Number is Undefinite');
+  } else {
+    console.log('Number is Less than Zero');
+  }
+};
+
+let userInput = prompt("Enter Your Number: ")
+voidCheck(userInput);
+
+let i;
+let sum = 0;
+let arr = [1,1,1,1,1];
+for (i = 0; i < arr.length; i++){
+  sum = sum +arr[i] ;
+}
+console.log(`Sum is ${sum}`);
+
+
+//count the number of total string
+const res = prompt("Enter input");
+const resArr = [...res];
+console.log("total length is "+resArr.length);
+
+let f=0;
+for(const num of resArr){
+  f++;
+}
+console.log(f);
+
+//switch two number
+let first = Number(prompt('Enter First Numner: '));
+let second = Number(prompt('Enter Second Number: '));
+
+let temp = first;
+first = second;
+second = temp;
+console.log(`After Switch the First num is ${first},second num is ${second}`);
+*/
+
